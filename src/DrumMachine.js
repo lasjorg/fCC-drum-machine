@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { drumBank } from './drum-bank';
 import './App.css';
 import { Button } from './Button';
@@ -13,56 +13,47 @@ const drumBankWithKeys = drumBank.map((bank, i) => {
 });
 
 function DrumMachine() {
-  const appRef = useRef(null);
   const [description, setDescription] = useState('');
 
-  useEffect(() => {
-    appRef.current.focus();
-  }, []);
+  const handleKeyPress = (e) => {
+    // test requires the actual audio element to have .play called on it
+    // test also expects the key to match the keyCodes for uppercase letters
+    // const keyCodes = [ 81, 87, 69, 65, 83, 68, 90, 88, 67 ];
+    // i.e. this will pass clip.id === e.key.toUpperCase() this will fail clip.id.toUpperCase() === e.key
+    const [audio] = Array.from(document.querySelectorAll('.clip')).filter(
+      (clip) => clip.id === e.key.toUpperCase()
+    );
 
-  const setFocus = () => {
-    appRef.current.focus();
+    if (audio) {
+      setDescription(audio.dataset.name || '');
+      audio.currentTime = 0;
+      audio.play();
+
+      audio.parentElement.classList.toggle('active');
+      setTimeout(() => {
+        audio.parentElement.classList.toggle('active');
+      }, 300);
+    }
   };
 
-  const handleEvent = (e) => {
-    // mouse click
-    if (e.type === 'click') {
-      const audio = e.target.firstElementChild;
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyPress);
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, []);
+
+  const handleButtonClick = (e) => {
+    const audio = e.target.firstElementChild;
+
+    if (audio) {
       setDescription(audio.dataset.name || '');
-
-      if (audio) {
-        audio.currentTime = 0;
-        audio.play();
-      }
-      // keyboard event
-    } else if (e.type === 'keydown') {
-      // test requires the actual audio element to have .play called on it
-      const [audio] = Array.from(document.querySelectorAll('.clip')).filter(
-        (clip) => clip.id.toLowerCase() === e.key
-      );
-
-      if (audio) {
-        setDescription(audio.dataset.name || '');
-        audio.parentElement.classList.toggle('active');
-        audio.currentTime = 0;
-        audio.play();
-        setTimeout(() => {
-          audio.parentElement.classList.toggle('active');
-        }, 300);
-      }
+      audio.currentTime = 0;
+      audio.play();
     }
   };
 
   return (
     <>
-      <div
-        id="drum-machine"
-        className="drum-machine"
-        ref={appRef}
-        tabIndex="0"
-        onKeyDown={handleEvent}
-        onBlur={setFocus}
-      >
+      <div id="drum-machine" className="drum-machine" tabIndex="0">
         <div id="display">{description}</div>
         {drumBankWithKeys.map(({ id, link, key, description }) => {
           return (
@@ -72,7 +63,7 @@ function DrumMachine() {
               src={link}
               letter={key}
               desc={description}
-              handleClick={handleEvent}
+              handleClick={handleButtonClick}
             />
           );
         })}
