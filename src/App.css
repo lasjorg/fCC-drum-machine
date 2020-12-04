@@ -25,22 +25,21 @@ body {
 }
 
 .drum-machine {
+  background: #ba2020;
+  padding: 20px 200px 20px 20px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.52), 9px 8px 4px rgba(0, 0, 0, 0.63),
+    14px 16px 5px 0px rgba(0, 0, 0, 0.22);
+  border-radius: 20px;
+  border: 8px outset #a6110f;
+  border-left: 8px inset #a6110f;
+  outline: none;
+}
+
+.pads-display-grid {
   display: grid;
   grid-template-columns: repeat(3, 200px);
   grid-template-rows: repeat(4, 140px);
-  /* padding: 100vh 100vw; */
-  background: #030303;
-  background: #ba2020;
-  padding: 10px;
   gap: 10px;
-  padding-right: 200px;
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.52), 9px 8px 4px rgba(0, 0, 0, 0.63),
-    14px 16px 5px 0px rgba(0, 0, 0, 0.22);
-  border-radius: 10px;
-
-  border-radius: 20px;
-  border: 8px outset #ba211f;
-  outline: none;
 }
 
 #display {
@@ -51,7 +50,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: 32px; */
+  border: 5px inset #6f3030;
 }
 
 #display:after {
@@ -91,9 +90,8 @@ button {
   background: radial-gradient(#1a4669, #00bcd4);
   color: transparent;
   text-shadow: 1px 1px 2px #ffffff54;
-  border: 2px solid #400909;
+  box-shadow: -4px -4px 1px rgb(186, 32, 32), 5px 5px 5px 0px rgb(105, 22, 21);
   border: none;
-  box-shadow: -4px -4px 1px rgb(197, 53, 53), 5px 5px 5px 0px rgb(105, 22, 21);
   outline: none;
 }
 

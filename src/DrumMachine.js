@@ -54,19 +54,21 @@ function DrumMachine() {
   return (
     <>
       <div id="drum-machine" className="drum-machine" tabIndex="0">
-        <div id="display">{description}</div>
-        {drumBankWithKeys.map(({ id, link, key, description }) => {
-          return (
-            <Button
-              id={id}
-              key={id}
-              src={link}
-              letter={key}
-              desc={description}
-              handleClick={handleButtonClick}
-            />
-          );
-        })}
+        <div className="pads-display-grid">
+          <div id="display">{description}</div>
+          {drumBankWithKeys.map(({ id, link, key, description }) => {
+            return (
+              <Button
+                id={id}
+                key={id}
+                src={link}
+                letter={key}
+                desc={description}
+                handleClick={handleButtonClick}
+              />
+            );
+          })}
+        </div>
       </div>
     </>
   );
