@@ -19,7 +19,7 @@ export const drumBank = {
       {
         id: 3,
         link: './audio/bank1/Bld_H1.mp3',
-        description: 'Bld H1',
+        description: 'Closed Hat',
       },
       {
         id: 4,
@@ -29,7 +29,7 @@ export const drumBank = {
       {
         id: 5,
         link: './audio/bank1/side_stick_1.mp3',
-        description: 'Side Stick 1',
+        description: 'Side Stick',
       },
       {
         id: 6,
@@ -102,47 +102,47 @@ export const drumBank = {
       {
         id: 0,
         link: './audio/bank3/Oneshot-13.mp3',
-        description: 'Oneshot 13',
+        description: 'Oneshot 1',
       },
       {
         id: 1,
         link: './audio/bank3/Oneshot-15.mp3',
-        description: 'Oneshot 15',
+        description: 'Oneshot 2',
       },
       {
         id: 2,
         link: './audio/bank3/Oneshot-17.mp3',
-        description: 'Oneshot 17',
+        description: 'Oneshot 3',
       },
       {
         id: 3,
         link: './audio/bank3/Oneshot-33.mp3',
-        description: 'Oneshot 33',
+        description: 'Oneshot 4',
       },
       {
         id: 4,
         link: './audio/bank3/Oneshot-50.mp3',
-        description: 'Oneshot 50',
+        description: 'Oneshot 5',
       },
       {
         id: 5,
         link: './audio/bank3/Oneshot-51.mp3',
-        description: 'Oneshot 51',
+        description: 'Oneshot 6',
       },
       {
         id: 6,
         link: './audio/bank3/Oneshot-88.mp3',
-        description: 'Oneshot 88',
+        description: 'Oneshot 7',
       },
       {
         id: 7,
         link: './audio/bank3/Oneshot-89.mp3',
-        description: 'Oneshot 89',
+        description: 'Oneshot 8',
       },
       {
         id: 8,
         link: './audio/bank3/Oneshot-101.mp3',
-        description: 'Oneshot 101',
+        description: 'Oneshot 9',
       },
     ],
   },
@@ -151,47 +151,47 @@ export const drumBank = {
       {
         id: 0,
         link: './audio/bank4/TonalSynth-033.mp3',
-        description: 'TonalSynth33',
+        description: 'TonalSynth 1',
       },
       {
         id: 1,
         link: './audio/bank4/TonalSynth-071.mp3',
-        description: 'TonalSynth71',
+        description: 'TonalSynth 2',
       },
       {
         id: 2,
         link: './audio/bank4/TonalSynth-072.mp3',
-        description: 'TonalSynth72',
+        description: 'TonalSynth 3',
       },
       {
         id: 3,
         link: './audio/bank4/TonalSynth-073.mp3',
-        description: 'TonalSynth73',
+        description: 'TonalSynth 4',
       },
       {
         id: 4,
         link: './audio/bank4/TonalSynth-074.mp3',
-        description: 'TonalSynth74',
+        description: 'TonalSynth 5',
       },
       {
         id: 5,
         link: './audio/bank4/TonalSynth-088.mp3',
-        description: 'TonalSynth88',
+        description: 'TonalSynth 6',
       },
       {
         id: 6,
         link: './audio/bank4/Start-Stop-16.mp3',
-        description: 'Start-Stop 16',
+        description: 'Start-Stop 1',
       },
       {
         id: 7,
         link: './audio/bank4/Start-Stop-26.mp3',
-        description: 'Start-Stop 26',
+        description: 'Start-Stop 2',
       },
       {
         id: 8,
         link: './audio/bank4/SubFX-7.mp3',
-        description: 'SubFX 7',
+        description: 'SubFX',
       },
     ],
   },
