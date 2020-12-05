@@ -156,27 +156,27 @@ export const drumBank = {
       {
         id: 1,
         link: './audio/bank4/TonalSynth-071.mp3',
-        description: 'TonalSynth 071',
+        description: 'TonalSynth71',
       },
       {
         id: 2,
         link: './audio/bank4/TonalSynth-072.mp3',
-        description: 'TonalSynth 072',
+        description: 'TonalSynth72',
       },
       {
         id: 3,
         link: './audio/bank4/TonalSynth-073.mp3',
-        description: 'TonalSynth 073',
+        description: 'TonalSynth73',
       },
       {
         id: 4,
         link: './audio/bank4/TonalSynth-074.mp3',
-        description: 'TonalSynth 074',
+        description: 'TonalSynth74',
       },
       {
         id: 5,
         link: './audio/bank4/TonalSynth-088.mp3',
-        description: 'TonalSynth 088',
+        description: 'TonalSynth88',
       },
       {
         id: 6,
