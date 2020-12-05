@@ -7,7 +7,7 @@ import { createBank } from './utils/createBank';
 function DrumMachine() {
   const [description, setDescription] = useState('');
   const [bank, setBank] = useState(createBank('bank1'));
-  const [volume, setVolume] = useState(1);
+  const [volume, setVolume] = useState(0.7);
 
   const handleKeyPress = React.useCallback(
     (e) => {
@@ -39,8 +39,9 @@ function DrumMachine() {
     return () => document.removeEventListener('keydown', handleKeyPress);
   }, [handleKeyPress]);
 
-  const handleButtonClick = (e) => {
-    const audio = e.target.firstElementChild;
+  const handleButtonClick = ({ target }) => {
+    const button = target;
+    const audio = button.firstElementChild;
 
     if (audio) {
       setDescription(audio.dataset.name || '');
@@ -50,24 +51,14 @@ function DrumMachine() {
     }
   };
 
-  const handleBankSwitch = (event, bank) => {
+  const handleBankSwitch = ({ target }, bank) => {
     document
       .querySelectorAll('.sound-banks .pad-button')
       .forEach((button) => button.classList.remove('active'));
-    event.target.classList.add('active');
+    target.classList.add('active');
 
     setBank(createBank(bank));
   };
-
-  // const handlePower = () => {
-  //   document.querySelectorAll('.pad-button').forEach((button) => {
-  //     const amount = button.style.getPropertyValue('--opacity');
-
-  //     amount === '1'
-  //       ? button.style.setProperty('--opacity', 0)
-  //       : button.style.setProperty('--opacity', 1);
-  //   });
-  // };
 
   return (
     <>
@@ -128,14 +119,10 @@ function DrumMachine() {
             <input
               type="range"
               name="volume"
-              id=""
               value={Math.round(volume * 100)}
               onChange={(e) => setVolume(e.target.value / 100)}
             />
           </div>
-          {/* <div className="power">
-            <button onClick={handlePower}>Power</button>
-          </div> */}
         </div>
       </div>
     </>
